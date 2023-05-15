@@ -34,7 +34,7 @@ void getdata() {
   for (int i = 1 ; i < real_fft_plan->size / 2 ; i++)
   {
     int mag = sqrt(pow(real_fft_plan->output[2*i],2) + pow(real_fft_plan->output[2*i+1],2))/100;
-    mag = map(mag, 0, sp2, 0, 63);
+    mag = map(mag, 0, sp2, 0, 31);
     if(mag>31) mag = 31;
     //16 bands, 12kHz top band
       if      (i<=2 )           levels[0]  = (mag > levels[0]) ? mag : (levels[0] - sp0);
